@@ -1,0 +1,101 @@
+// --- buttons component ---
+.btn {
+  &:link,
+  &:visited {
+    backface-visibility: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.9375rem 2.5rem;
+    display: inline-block;
+    border-radius: 6.25rem;
+    box-shadow: 1px 2px 3px var(--shadow-clr-default);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    position: relative;
+  }
+
+  &:hover {
+    z-index: 100;
+    transform: translateY(-2px);
+    box-shadow: 1px 3px 5px var(--shadow-clr-higher);
+
+    &::after {
+      transform: scale(1.5, 1.4);
+      opacity: 0;
+    }
+    &::before {
+      transform: scale(1.7, 1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    box-shadow: 1px 2px 3px var(--shadow-clr-default);
+    transform: translateY(-1px);
+  }
+
+  &--white {
+    background-color: var(--background-clr-btn-white);
+    color: var(--text-btn);
+
+    &::before,
+    &::after {
+      background-color: var(--background-clr-btn-white);
+    }
+  }
+
+  &--green {
+    background-color: var(--background-clr-btn-green);
+    color: white;
+
+    &::before,
+    &::after {
+      background-color: var(--background-clr-btn-green);
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: inline-block;
+    border-radius: 100px;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.4;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  &::before {
+    opacity: 0.3;
+  }
+
+  &--animated {
+    animation: moveInBottom 1s ease-in-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn__text {
+  &:link,
+  &:visited {
+    color: var(--text-clr-learn-more-btn);
+    font-size: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-learn-more-btn);
+    padding: 0.3125rem;
+    border-radius: 2px;
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:hover {
+    color: var(--text-clr-default);
+    background-color: var(--primary-clr-default);
+    box-shadow: 1px 8px 10px var(--shadow-clr-higher);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 1px 5px 5px var(--shadow-clr-default);
+    transform: translateY(0);
+  }
+}

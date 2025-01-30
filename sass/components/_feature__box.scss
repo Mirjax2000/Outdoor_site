@@ -1,0 +1,26 @@
+// --- feature box ---
+
+.feature__box {
+  background-color: var(--background-clr-feature__box);
+  padding: 1.5625rem;
+  border-radius: 3px;
+  box-shadow: 1px 0.625rem 1.25rem var(--shadow-clr-default);
+  transition: transform 0.15s ease-in-out;
+  backface-visibility: hidden;
+  
+  &:hover {
+      transform: scale(1.03) translateY(-0.625rem);
+  }
+
+  &__icon {
+    font-size: 6rem;
+    display: inline-block;
+    background-image: var(--background-clr-gradient);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+}

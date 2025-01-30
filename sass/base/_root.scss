@@ -1,0 +1,17 @@
+/* --- root --- */
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+@include export-to-root($light-theme, "");
+
+[data-theme="desktop"] {
+  @include export-to-root($desktop, "");
+}
+
+[data-theme="tablet"] {
+  @include export-to-root($tablet, "");
+}
+
+[data-theme="mobile"] {
+  @include export-to-root($mobile, "");
+}

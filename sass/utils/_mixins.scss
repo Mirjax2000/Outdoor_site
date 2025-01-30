@@ -1,0 +1,10 @@
+/* --- mixins --- */
+@use "./functions" as *;
+
+@mixin export-to-root($map, $prefix: "") {
+  #{":root"} {
+    @each $key, $value in map-to-css-vars($map, $prefix) {
+      #{$key}: #{$value};
+    }
+  }
+}

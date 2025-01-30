@@ -1,0 +1,129 @@
+// --- card ---
+@use "../utils/variables" as *;
+
+.card {
+  width: 100%;
+  height: 32.25rem;
+  perspective: 93.75rem;
+  transition: all 0.7s ease-in-out;
+  position: relative;
+
+  &__side {
+    backface-visibility: hidden;
+    border-radius: 0.3125rem;
+    overflow: hidden;
+    box-shadow: 1px 1rem 1.25rem var(--shadow-clr-default);
+    position: absolute;
+    height: inherit;
+    inset: 0;
+    transition: all 0.7s ease-in-out;
+
+    &--front {
+      background-color: var(--background-clr-default);
+      z-index: 10;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--orange {
+        background-image: var(--background-clr-gradient-card-orange);
+      }
+      &--green {
+        background-image: var(--background-clr-gradient);
+      }
+      &--blue {
+        background-image: var(--background-clr-gradient-card-blue);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    z-index: 1;
+  }
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+    z-index: 10;
+  }
+
+  &__picture {
+    background-size: cover;
+    background-position: top center;
+    height: 14.375rem;
+    clip-path: polygon(0 0, 100% 0, 100% 13rem, 0 100%);
+    background-blend-mode: screen;
+    &--1 {
+      background-image: var(--background-clr-gradient-card-orange),
+        url("#{$img-path}nat-5.jpg");
+    }
+    &--2 {
+      background-image: var(--background-clr-gradient),
+        url("#{$img-path}nat-6.jpg");
+    }
+    &--3 {
+      background-image: var(--background-clr-gradient-card-blue),
+        url("#{$img-path}nat-7.jpg");
+    }
+  }
+  &__heading {
+    width: 14ch;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    position: absolute;
+    top: 7.5rem;
+    right: 1rem;
+
+    &__span {
+      padding: 1rem;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      &--orange {
+        background-image: var(--background-clr-gradient-card-orange);
+      }
+      &--green {
+        background-image: var(--background-clr-gradient);
+      }
+      &--blue {
+        background-image: var(--background-clr-gradient-card-blue);
+      }
+    }
+  }
+
+  &__details {
+    padding: 1.875rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin-inline: auto;
+
+      li {
+        padding-block: 0.5rem;
+        font-size: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(208, 208, 208, 0.635);
+        }
+      }
+    }
+  }
+
+  &__price-box {
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
+  &__price-only {
+    font-size: 1rem;
+  }
+  &__price-value {
+    font-size: 3.75rem;
+    font-weight: 200;
+  }
+}
