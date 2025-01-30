@@ -506,6 +506,10 @@ body {
 }
 
 /* --- home --- */
+body.home {
+  opacity: 1;
+}
+
 .section__about {
   background-color: var(--background-clr-about);
   padding-block: 15.625rem;
