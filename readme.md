@@ -2,6 +2,8 @@
 
 Na své cestě k prohloubení znalostí Sass jsem se rozhodl znovu projít a optimalizovat své dosavadní zkušenosti s důrazem na lepší techniky automatizace a implementaci 7-1 patternu. To mi umožnilo nejen lépe organizovat své projekty, ale také výrazně zefektivnit pracovní proces.
 
+![Nahled stranky](./img/prev_1.jpg)![Nahled stranky](./img/prev_2.jpg)
+
 <h3>Klíčová vylepšení</h3>
 
 1. Ovládnutí 7-1 patternu
