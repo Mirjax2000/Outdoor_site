@@ -60,6 +60,25 @@ Konzistence: Zajištění jednotnosti napříč styly.
 
 Údržba: Snadné nalezení a aktualizace specifických stylů.
 
+5. Řešení problému FOUC (Flash of Unstyled Content)
+
+Abych zabránil problému FOUC (bliknutí neformátovaného obsahu), implementoval jsem předčasné načtení CSS souboru s elegantním učinkem postupného zobrazení:
+
+```
+<link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+  <link rel="stylesheet" href="./css/main.css">
+</noscript>
+
+<style>
+  body {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+</style>
+```
+
 <h3>Závěr</h3>
 
 Tato revize mého workflow Sass byla skutečným posunem vpřed a těším se, že tyto optimalizace přenesu do svých budoucích projektů. Prozkoumejte kód a strukturu v tomto repozitáři a podělte se o své názory nebo vylepšení!
