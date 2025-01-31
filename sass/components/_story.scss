@@ -1,0 +1,61 @@
+// --- story ---
+.story {
+  width: 80%;
+  margin-inline: auto;
+  background-color: rgba(255, 255, 255, 0.439);
+  border-radius: 3px;
+  padding: 3.75rem 3.75rem 3.75rem 5.625rem;
+  box-shadow: 1px 1.25rem 1.25rem var(--shadow-clr-default);
+  transform: skewX(-10deg);
+  display: flow-root;
+
+  &__shape {
+    position: relative;
+    float: left;
+    width: 9.375rem;
+    aspect-ratio: 1;
+    clip-path: circle(50%);
+    shape-outside: circle(50%);
+    transform: skewX(10deg) translateX(-1rem);
+    z-index: 100;
+    cursor: pointer;
+
+    &:hover &__img {
+      transform: scale(1);
+      filter: blur(3px) brightness(80%) grayscale(50%);
+    }
+
+    &:hover &__caption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    &__img {
+      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1;
+      backface-visibility: hidden;
+      transform: scale(1.4);
+      transition: all 0.15s ease-in-out;
+    }
+
+    &__caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      text-transform: uppercase;
+      color: white;
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+      backface-visibility: hidden;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+  &__text {
+    transform: skewX(10deg);
+  }
+}
