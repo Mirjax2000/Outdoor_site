@@ -1,13 +1,23 @@
 // --- story ---
 .story {
+  --skew-angle: -10deg;
   width: 80%;
   margin-inline: auto;
-  background-color: rgba(255, 255, 255, 0.439);
   border-radius: 3px;
   padding: 3.75rem 3.75rem 3.75rem 5.625rem;
-  box-shadow: 1px 1.25rem 1.25rem var(--shadow-clr-default);
-  transform: skewX(-10deg);
   display: flow-root;
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.439);
+    inset: 0;
+    z-index: -1;
+    transform: skewX(var(--skew-angle));
+    box-shadow: 1px 1.25rem 1.25rem var(--shadow-clr-default);
+  }
 
   &__shape {
     position: relative;
@@ -16,7 +26,7 @@
     aspect-ratio: 1;
     clip-path: circle(50%);
     shape-outside: circle(50%);
-    transform: skewX(10deg) translateX(-1rem);
+    transform: translateX(-1rem);
     z-index: 100;
     cursor: pointer;
 
@@ -54,8 +64,5 @@
       backface-visibility: hidden;
       text-shadow: 1px 1px 1px black;
     }
-  }
-  &__text {
-    transform: skewX(10deg);
   }
 }

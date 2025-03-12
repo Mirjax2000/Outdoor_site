@@ -11,6 +11,7 @@ $light-theme: (
     "default": #fff,
     "dark": #111,
     "btn": #777,
+    "placeholder": #999,
     "learn-more-btn": #7ed56f,
   ),
   "background-clr": (
@@ -26,11 +27,7 @@ $light-theme: (
     "gradient-card-orange":
       linear-gradient(to right bottom, rgba(#ffa135, 0.8), rgba(#ff8800, 0.8)),
     "gradient-card-blue":
-      linear-gradient(
-        to right bottom,
-        rgba(rgb(0, 170, 255), 0.8),
-        rgba(#2306ff, 0.8)
-      ),
+      linear-gradient(to right bottom, rgba(#00aaff, 0.8), rgba(#2306ff, 0.8)),
   ),
   "shadow-clr": (
     "default": rgba(black, 0.3),

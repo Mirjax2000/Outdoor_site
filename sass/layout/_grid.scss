@@ -1,31 +1,36 @@
 /* --- grid --- */
 
 .row {
+  --max-width: 90rem;
+  --gap: 3.125rem;
+  --padding-inline: 1rem;
+  // ---
   max-width: 90rem;
   display: flow-root;
   margin-inline: auto;
-  padding-inline: 1rem;
-}
+  padding-inline: var(--padding-inline);
 
-.col-1-of-2 {
-  width: calc((100% - 3.125rem) / 2);
-  float: left;
-  &:not(:last-child) {
-    margin-right: 3.125rem;
+  .col-1-of-2 {
+    width: calc((100% - var(--gap)) / 2);
+    float: left;
+    &:not(:last-child) {
+      margin-right: var(--gap);
+    }
   }
-}
 
-.col-1-of-4 {
-  width: calc((100% - (3.125rem * 3)) / 4);
-  float: left;
-  &:not(:last-child) {
-    margin-right: 3.125rem;
+  .col-1-of-4 {
+    width: calc((100% - (var(--gap) * 3)) / 4);
+    float: left;
+    &:not(:last-child) {
+      margin-right: var(--gap);
+    }
   }
-}
-.col-1-of-3 {
-  width: calc((100% - (3.125rem * 2)) / 3);
-  float: left; 
-  &:not(:last-child) {
-    margin-right: 3.125rem;
+
+  .col-1-of-3 {
+    width: calc((100% - (var(--gap) * 2)) / 3);
+    float: left;
+    &:not(:last-child) {
+      margin-right: var(--gap);
+    }
   }
 }

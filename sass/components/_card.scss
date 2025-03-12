@@ -2,21 +2,26 @@
 @use "../utils/variables" as *;
 
 .card {
+  --height: 32.25rem;
+  --perspective: 93.75rem;
+  --transition-time: 0.7s;
+  --rotate-Y: 180deg;
+  // ---
   width: 100%;
-  height: 32.25rem;
-  perspective: 93.75rem;
-  transition: all 0.7s ease-in-out;
+  height: var(--height);
+  perspective: var(--perspective);
+  transition: all var(--transition-time) ease-in-out;
   position: relative;
 
   &__side {
-    backface-visibility: hidden;
-    border-radius: 0.3125rem;
-    overflow: hidden;
-    box-shadow: 1px 1rem 1.25rem var(--shadow-clr-default);
     position: absolute;
     height: inherit;
+    border-radius: 0.3125rem;
+    box-shadow: 1px 1rem 1.25rem var(--shadow-clr-default);
     inset: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all var(--transition-time) ease-in-out;
+    backface-visibility: hidden;
+    overflow: hidden;
 
     &--front {
       background-color: var(--background-clr-default);
@@ -24,7 +29,7 @@
     }
 
     &--back {
-      transform: rotateY(180deg);
+      transform: rotateY(var(--rotate-Y));
       z-index: 1;
       display: flex;
       justify-content: center;
@@ -43,7 +48,7 @@
   }
 
   &:hover &__side--front {
-    transform: rotateY(-180deg);
+    transform: rotateY(calc(var(--rotate-Y) * -1));
     z-index: 1;
   }
   &:hover &__side--back {
@@ -52,9 +57,10 @@
   }
 
   &__picture {
+    --height: 14.375rem;
+    height: var(--height);
     background-size: cover;
     background-position: top center;
-    height: 14.375rem;
     clip-path: polygon(0 0, 100% 0, 100% 13rem, 0 100%);
     background-blend-mode: screen;
     &--1 {
@@ -71,13 +77,13 @@
     }
   }
   &__heading {
-    width: 14ch;
+    position: absolute;
     font-size: 1.75rem;
     font-weight: 300;
+    width: 14ch;
     color: white;
     text-transform: uppercase;
     text-align: right;
-    position: absolute;
     top: 7.5rem;
     right: 1rem;
 

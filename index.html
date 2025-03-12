@@ -26,7 +26,7 @@
 </head>
 
 <body class="home">
-  <!-- <header class="header">
+  <header class="header">
     <div class="header__logo-box">
       <img src="./img/logo-white.png" alt="logo-white" class="header__logo" />
     </div>
@@ -37,10 +37,10 @@
       </h1>
       <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
     </div>
-  </header> -->
+  </header>
 
   <main>
-    <!-- <section class="section__about">
+    <section class="section__about">
       <div class="u-center-text u-mb-big">
         <h2 class="heading__secondary">
           Exciting tours for adventurous people
@@ -77,9 +77,9 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="section__features">
+    <section class="section__features">
       <div class="row">
 
         <div class="col-1-of-4">
@@ -126,9 +126,9 @@
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="section__tours">
+    <section class="section__tours">
       <div class="u-center-text u-mb-big">
         <h2 class="heading__secondary">
           Most popular tours
@@ -229,9 +229,9 @@
       <div class="u-center-text">
         <a href="#" class="btn btn--green">Discover all tours</a>
       </div>
-    </section> -->
+    </section>
 
-    <section class="section__stories">
+    <!-- <section class="section__stories">
       <div class="bg__video">
         <video class="bg__video__content" autoplay muted loop>
           <track src="./img/video-subtitles.vtt" kind="subtitles" srclang="en" label="English">
@@ -288,7 +288,51 @@
       <div class="u-center-text u-mt-big">
         <a href="#" class="btn__text"> Read all stories &rarr;</a>
       </div>
+    </section> -->
+    <section class="section__book">
+      <div class="row">
+        <div class="book">
+          <div class="book__form">
+            <form action="#" class="form" method="post">
+              <div class="u-mb-medium">
+                <h2 class="heading__secondary">Start booking now</h2>
+              </div>
+
+              <div class="form__group">
+                <input type="text" class="form__input" id="name" placeholder="full name" required>
+                <label for="name" class="form__label">Full name</label>
+              </div>
+
+              <div class="form__group">
+                <input type="email" class="form__input" id="email" placeholder="email address" required>
+                <label for="email" class="form__label">Email address</label>
+              </div>
+              <div class="form__group">
+                <div class="form__radio-group">
+                  <input type="radio" class="form__radio-input" id="small" name="size">
+                  <label for="small" class="form__radio-label"><span class="form__radio-btn"></span>Small tour
+                    group</label>
+                </div>
+
+                <div class="form__radio-group u-mb-medium">
+                  <input type="radio" class="form__radio-input" id="large" name="size">
+                  <label for="large" class="form__radio-label"><span class="form__radio-btn"></span>Large tour
+                    group</label>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <button class="btn btn--green">next step &rarr;</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
     </section>
+
+
+
   </main>
 </body>
 
